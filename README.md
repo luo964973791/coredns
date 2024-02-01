@@ -7,7 +7,9 @@ cat > /etc/coredns/Corefile <<EOF
     hosts /etc/coredns/hostsfile {
         fallthrough
     }
-    forward . 8.8.8.8:53
+    forward . 8.8.8.8:53 114.114.114.114:53 180.76.76.76:53 {
+        policy round_robin
+    }
     log
 }
 EOF
