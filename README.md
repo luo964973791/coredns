@@ -39,6 +39,7 @@ vi /etc/resolv.conf
 nameserver 172.27.0.3
 
 #反向解析命令
+yum install bind-utils -y
 dig -x $(hostname -I |awk '{print $1}')
 
 #正向解析命令
